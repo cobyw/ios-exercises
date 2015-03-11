@@ -19,22 +19,30 @@
     //Finds the part of the string that says cheese (if it doesnt say cheese panic)
     NSRange cheeseRange = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
     //removes the part that says cheese
+    if (cheeseRange.location == NSNotFound)
+    {
+        return cheeseName;
+    }
+    else
+    {
     NSString *cheeseNameWithoutCheeseSuffix = [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@""];
     return cheeseNameWithoutCheeseSuffix;
+    }
+    return nil;
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
+    NSString *numberOfCheesesStringWithCheeseCount;
     if (cheeseCount == 1) {
-        /* WORK HERE, ASSUMING THERE IS 1 CHEESE */
+        
+        numberOfCheesesStringWithCheeseCount = [NSString stringWithFormat:@"%ld cheese", cheeseCount];
     } else {
-        /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
+        
+        numberOfCheesesStringWithCheeseCount = [NSString stringWithFormat:@"%ld cheeses", cheeseCount];
     }
     
-    /*
-     (You will learn more about if/else statements in the next checkpoint.)
-     */
     
-    return nil;
+    return numberOfCheesesStringWithCheeseCount;
 }
 
 @end
