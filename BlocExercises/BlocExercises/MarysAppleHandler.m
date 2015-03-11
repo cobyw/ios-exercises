@@ -40,13 +40,9 @@ else //she has at or over a hundred million dollars
 - (NSUInteger) dollarCostForAppleFlavoredVodka {
     /* WORK HERE */
 
-    NSUInteger cost = 24;
-    
-    if (self.getsDiscount) {
-        cost *= .75;
-    }
-    
+    NSUInteger cost = (self.getsDiscount)? 18/*if she gets the discount*/:24/*if she does not*/;
     return cost;
+     
 }
 
 @end
