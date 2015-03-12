@@ -12,7 +12,27 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @"";
+    NSMutableString *counter = [NSMutableString string];
+    NSMutableString *numberToAdd =[NSMutableString stringWithFormat:@"%ld", number];
+    if (number < otherNumber)
+    {
+        while (number <= otherNumber)
+        {
+            numberToAdd =[NSMutableString stringWithFormat:@"%ld", number];
+            [counter appendString: numberToAdd];
+            number++;
+        }
+    }
+    else
+    {
+        while (otherNumber <= number)
+        {
+            numberToAdd =[NSMutableString stringWithFormat:@"%ld", otherNumber];
+            [counter appendString: numberToAdd];
+            otherNumber++;
+        }
+    }
+    return counter;
 }
 
 @end
