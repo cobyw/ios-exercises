@@ -25,7 +25,7 @@
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     //creates a mutable array to store the drinks to be returned
-    NSMutableArray *favoriteDrinks;
+    NSMutableArray *favoriteDrinks = [NSMutableArray array];
     //loop through the passed array getting the favorite drinks using the favoritedrink method from above
     for (NSInteger x = 0; x < charactersArray.count; x++)
     {
@@ -37,11 +37,11 @@
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    //create a mutable dictionary to be returned
-    NSMutableDictionary *starTrekWithQuotes;
-    //loops throught and copies the old dictionary to the new
-    //adds quotes
-    //returns new
+    //create the mutable dictionary to be returned and copies the passed dictionary to it
+    NSMutableDictionary *starTrekWithQuotes = [characterDictionary mutableCopy];
+    //adds the quote
+    [starTrekWithQuotes setObject:@"Live long and prosper" forKey:@"quote"];
+    //returns the new dictionary
     return starTrekWithQuotes;
 }
 
