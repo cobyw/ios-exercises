@@ -7,34 +7,45 @@
 //
 
 #import "StuffRememberer.h"
+
+@interface StuffRememberer ()
+//sets properties
+@property (nonatomic, strong) NSMutableArray *test;
+@property (nonatomic, copy) NSMutableArray *copied;
+@property (nonatomic, assign) CGFloat rememberedFloat;
+@end
+
 @implementation StuffRememberer
+
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
-    //makes a strong reference to arrayToRemember so it can't be deallocated???
-    NSArray *rememberer = arrayToRemember;
-    /*@property (nonatomic, strong) NSMutableArray *Remembered;*/
-};
+    //sets 
+    self.test = arrayToRemember;
+
+}
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
     //makes a copy of the array as it currently is and stores it for later?
+    self.copied = arrayToCopy;
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
     /* WORK HERE */
+    self.rememberedFloat = floatToRemember;
 }
 
 - (NSMutableArray *) arrayYouShouldRemember {
     /* WORK HERE */
-    return [@[] mutableCopy];
+    return self.test;
 }
 
 - (NSMutableArray *) arrayYouShouldCopy {
     /* WORK HERE */
-    return [@[] mutableCopy];
+    return self.copied;
 }
 
 - (CGFloat) floatYouShouldRemember {
     /* WORK HERE */
-    return 0.0f;
+    return self.rememberedFloat;
 }
 
 @end

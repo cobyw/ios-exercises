@@ -21,8 +21,6 @@
         return nil;
 }
 
-/*NOT CURRENTLY FUNCTIONAL BELOW HERE*/
-
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     //creates a mutable array to store the drinks to be returned
     NSMutableArray *favoriteDrinks = [NSMutableArray array];
